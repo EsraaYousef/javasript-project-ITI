@@ -129,7 +129,7 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="js/script.js"></script> -->
+    <script src="js/smtp.js"></script>
 
 
     <script>
@@ -145,33 +145,46 @@
                 email: $("#email").val(),
                 address: $("#address").val(),
                 age: $("#age").val(),
-                password: $("#password").val(),
                 username: $("#email").val().split("@")[0],
             }
             employees.push(employee);
-            console.log("employee added", employee);
+            // console.log("employee added", employee);
             //saving to localStorage
-            localStorage.setItem("MyEmployeeList", JSON.stringify(employees));
+            localStorage.setItem("employeeList", JSON.stringify(employees));
         };
 
-        //CHECK VALIDATION FUNCTION
-        function validate(e) {
-            if ($("input").val().trim() == "") {
-                var forms = document.getElementsByClassName("needs-validation");
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.classList.add("was-validated");
+        //SEND EMAIL
+        function sendEmail() {
+            email = $("#email").val();
+            address = $("#address").val();
+            password = $("#password").val();
+            username = $("#email").val().split("@")[0];
+
+            console.log("email ==> ", email, '\n', "username ==> ", username,);
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "attendanceiti2021@gmail.com",
+                Password: "74010685975D5B4B3E9C808AFC731409026F",
+                To: email,
+                From: "attendanceiti2021@gmail.com",
+                Subject: "verification Email",
+                Body: `Congratulations, This is a verification Email from ITI Attendance System and your \n
+                Username is: ${username}\n
+                Password is: ${password}`
+            })
+                .then(function (message) {
+                    alert("Mail has been sent successfully, Go and check your Inbox")
                 });
-                e.preventDefault()
-            }
-            return (true);
         }
+
 
         //POST DATA TOP APIA
         async function postData(url = 'http://localhost:3000/employees', data = {}) {
+            alert('Processing Data !!')
             addEmployee()
-            var MyEmployeeList = JSON.parse(localStorage.getItem('MyEmployeeList'))[0];
-            console.log(MyEmployeeList);
-            // Default options are marked with *
+            var employeeList = JSON.parse(localStorage.getItem('employeeList'))[0];
+            // console.log(employeeList);
+            // Default options are marked with 
             const response = await fetch(url, {
                 method: 'POST',
                 mode: 'cors',
@@ -181,9 +194,43 @@
                 },
                 redirect: 'follow',
                 referrerPolicy: 'no-referrer',
-                body: JSON.stringify(MyEmployeeList)
-            });
-            return response.json();
+                body: JSON.stringify(employeeList)
+            })
+                .then((response) => response.json())
+                .then((employeesData) => {
+                    console.log("Success:", employeeList);
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                });
+            document.querySelector("form").reset();
+            window.location.assign("./login.html");
+
+            return
+        }
+
+        //CHECK VALIDATION FUNCTION
+        function validate(e) {
+            if ($("input").val() == "") {
+                var forms = document.getElementsByClassName("needs-validation");
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.classList.add("was-validated");
+                });
+            }
+            else {
+                //POST DATA TO API
+                var forms = document.getElementsByClassName("needs-validation");
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.classList.remove("was-validated");
+                });
+
+                var email = $('#email').val();
+                // alert(email);
+                sendEmail()
+                //POST DATA TO API
+                postData()
+            }
+            // return (false);
         }
 
         //HANDLE SUBMIT DATA
@@ -191,12 +238,8 @@
             event.preventDefault();
             //CHECK VALIDATION
             validate();
-            //POST DATA TO API
-            postData()
-            alert('Process !!')
-            // postData();
-            alert('Done !!')
             return false;
+            event.preventDefault();
         }
     </script>
 </body>

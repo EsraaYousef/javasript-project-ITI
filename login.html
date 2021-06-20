@@ -100,7 +100,6 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
     <!-- <script type="text/javascript" src="data.json"></script> -->
 
 
@@ -133,28 +132,46 @@
 
         //Autheticate user function
         function authenticate() {
-            var lusername = $("#username").val();
-            var lpassword = $("#password").val();
 
-            if (MyEmployeeList.length > 0) {
-                for (i = 0; i < MyEmployeeList.length; i++) {
-                    if ((lusername == MyEmployeeList[i].username) && (lpassword == MyEmployeeList[i].password)) {
-                        alert("You're in!");
-                        $('#username').value = "";
-                        $('#password').value = "";
-                        break;
-                        console.log(MyEmployeeList[i].username, '-----');
-                    }
-                    if (i == MyEmployeeList.length - 1 || MyEmployeeList.length == 0) {
-                        console.log('working')
-                        troubleshoot(username, password);
-                    }
-                }
-            } else {//enter here on first load when there are no MyEmployeeList in the array yet
-                alert("No match found. Please click the Create Account link to register a new username");
-                $('#username').value = "";
-                $('#password').value = "";
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username == null || username == "") {
+                var forms = document.getElementsByClassName("needs-validation");
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.classList.add("was-validated");
+                });
+                alert("Please enter the username.");
+                return false;
             }
+            if (password == null || password == "") {
+                alert("Please enter the password.");
+                return false;
+            }
+            alert('Login successful');
+
+
+            // var lusername = $("#username").val();
+            // var lpassword = $("#password").val();
+
+            // if (MyEmployeeList.length > 0) {
+            //     for (i = 0; i < MyEmployeeList.length; i++) {
+            //         if ((lusername == MyEmployeeList[i].username) && (lpassword == MyEmployeeList[i].password)) {
+            //             alert("You're in!");
+            //             $('#username').value = "";
+            //             $('#password').value = "";
+            //             break;
+            //             console.log(MyEmployeeList[i].username, '-----');
+            //         }
+            //         if (i == MyEmployeeList.length - 1 || MyEmployeeList.length == 0) {
+            //             console.log('working')
+            //             troubleshoot(username, password);
+            //         }
+            //     }
+            // } else {//enter here on first load when there are no MyEmployeeList in the array yet
+            //     alert("No match found. Please click the Create Account link to register a new username");
+            //     $('#username').value = "";
+            //     $('#password').value = "";
+            // }
 
         };
         //If there is a match in the known usernames clear only the password field so user
