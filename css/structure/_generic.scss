@@ -1,0 +1,68 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    ::placeholder {
+        color: #BEBEBE;
+        font-size: 14px;
+        font-family: $font-medium, sans-serif;
+    }
+}
+
+body {
+    font-family: $font-regular, sans-serif;
+    color: #263871;
+    padding: 0 !important;
+    overflow-x: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: start;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        @extend %shadow;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $main-color;
+        outline: 1px solid $main-color;
+        border-radius: 2px;
+    }
+}
+
+a {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        color: inherit;
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+.btn.focus,
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.rtl .list-inline,
+.rtl .list-unstyled,
+.rtl .pagination,
+[dir=rtl] .list-inline,
+[dir=rtl] .list-unstyled,
+[dir=rtl] .pagination {
+    padding: 0;
+}

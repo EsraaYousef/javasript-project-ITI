@@ -1,0 +1,165 @@
+.form-group {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+
+.form-control {
+    border: 1px solid #D4D4D4;
+    color: #263871;
+    caret-color: $second-color;
+    position: relative;
+    direction: initial;
+    text-align: start;
+    border-radius: $radius;
+    padding-left: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: $font-medium, sans-serif;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border-radius: 5px;
+    outline: 0;
+    opacity: 1;
+
+    &::placeholder {
+        color: #BEBEBE;
+        font-size: 14px;
+        font-family: $font-medium, sans-serif;
+    }
+
+    &:hover,
+    &:focus {
+        outline: unset;
+        box-shadow: unset;
+        border-color: $main-color;
+    }
+}
+
+textarea {
+    &.form-control {
+        height: 103px;
+        resize: inherit;
+        direction: inherit;
+
+        &::placeholder {
+            color: #BEBEBE;
+            direction: inherit;
+        }
+
+        &:focus {
+            outline: inherit;
+            box-shadow: none;
+            border-color: $main-color;
+        }
+    }
+}
+
+// validation
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+.form-control.is-valid,
+.was-validated .form-control:valid {
+    padding-right: calc(1.5em + .75rem);
+    padding-left: 15px;
+    background-position: center right calc(.375em + .1875rem);
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.custom-select.is-valid,
+.was-validated .custom-select:valid {
+    border-color: #28a745;
+    padding-left: 15px;
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 2rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #fff no-repeat center right 0.75rem/calc(.75em + .375rem) calc(.75em + .375rem);
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.invalid-feedback {
+    font-size: 13px;
+    color: rgb(238, 62, 62);
+    text-align: left;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.single-select {
+    min-width: 140px;
+}
+
+
+a {
+
+    &:hover,
+    &:focus {
+        @extend %ease;
+    }
+}
+
+.note {
+    color: red;
+    font-size: 13px;
+    font-family: $font-medium, sans-serif;
+}
+
+.main-color {
+    color: $main-color;
+}
+
+.font-color {
+    color: $font-color
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-main {
+    color: $main-color;
+}
+
+.text-black {
+    color: $main-color;
+}
+
+.text-muted {
+    color: #9ba5ca !important;
+}
+
+.white-bg {
+    background-color: $white-color;
+}
+
+.grey-bg {
+    background-color: $light-grey;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.white-font {
+    color: $white-color;
+}
+
+.card-body {
+    padding: 1.5rem;
+}

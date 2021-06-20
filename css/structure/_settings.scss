@@ -1,0 +1,58 @@
+/*
+    typed..Esraa Yousef
+*/
+
+$white-color: #ffffff;
+$black-color: #373737;
+$main-color: #336799;
+$second-black: #414141;
+$second-color: #2479ca;
+$font-color: #6B6B6B;
+$light-grey: #A1A1A1;
+$red-color: #FF4646;
+$radius: 5px;
+$bar-width: 25px;
+$bar-height: 3px;
+$bar-spacing: 8px;
+
+%shadow {
+    -webkit-box-shadow: 0px 10px 18px rgba(255, 128, 176, 0.2);
+    -moz-box-shadow: 0px 10px 18px rgba(255, 128, 176, 0.2);
+    -o-box-shadow: 0px 10px 18px rgba(255, 128, 176, 0.2);
+    box-shadow: 0px 10px 18px rgba(255, 128, 176, 0.2);
+}
+
+%ease {
+    -webkit-transition: all 0.5s linear 0s;
+    -moz-transition: all 0.5s linear 0s;
+    -o-transition: all 0.5s linear 0s;
+    transition: all 0.5s linear 0s;
+}
+
+
+/* fonts */
+@font-face {
+    font-family: 'Nunito-Light';
+    src: url('../fonts/Nunito-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito-Bold';
+    src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito-regular';
+    src: url('../fonts/Nunito-regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+$font-light: 'Nunito-Light';
+$font-regular: 'Nunito-regular';
+$font-medium: 'Nunito-Bold';
