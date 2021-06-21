@@ -62,17 +62,19 @@
                                         <h1 class="mb-2">Login</h1>
                                         <p class="text-muted">Sign In to your account</p>
                                     </div>
-                                    <form method="POST" class="card-body pt-0 needs-validation" id="loginForm"
-                                        name="loginForm" novalidate>
+                                    <form class="card-body pt-0 needs-validation" id="loginForm" name="loginForm"
+                                        novalidate>
                                         <div class="form-group">
                                             <label class="form-label">Username</label>
                                             <input class="form-control" id="username" name="username"
-                                                placeholder="Email" type="email" required>
+                                                placeholder="Enter your username" type="text" required>
+                                            <div class="invalid-feedback">Please enter your email</div>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label">Password</label>
                                             <input class="form-control" id="password" name="password"
                                                 placeholder="password" type="password" required autocomplete>
+                                            <div class="invalid-feedback">Please enter your password</div>
                                         </div>
                                         <div class="form-group">
                                             <label class="custom-control custom-checkbox">
@@ -95,7 +97,9 @@
             </div>
         </div>
     </div>
-
+    <!-- <a href="mailto:abc@example.com?subject = Feedback&body = Message">
+        Send Feedback
+    </a> -->
     <!-- JavaScript Libraries -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -104,114 +108,80 @@
 
 
     <script>
-        //Define an array to hold MyEmployeeList as they're added in the new registration page
-        var MyEmployeeList = localStorage.getItem('MyEmployeeList', JSON.stringify());
-        // for (i = 0; i < MyEmployeeList.length; i++) {
-        //     console.log('username of user ==> ', MyEmployeeList[i]);
-        // }
+        var flag = 0;
+        //Define an array to hold employeeList as they're added in the new registration page
+        var employeeList = JSON.parse(localStorage.getItem('employeeList'));
 
-        function namesAndRoles1(users) {
-            return users.map(user => `Name: ${user.name}<br/>Role: ${user.role}${user.admin ? " (admin)" : ""}<br/>`)
-                .join('<hr/>');
-        }
+        //log the list of employeeList 
+        console.log(employeeList);
 
-        if (JSON.parse(sessionStorage.getItem('MyEmployeeList')) != null) {
-            for (i = 0; i < JSON.parse(sessionStorage.getItem('MyEmployeeList')).length; i++) {
-                MyEmployeeList.push(JSON.parse(sessionStorage.getItem('MyEmployeeList'))[i]);
-            };
-        };
-        //log the list of MyEmployeeList 
-        console.log(MyEmployeeList);
-
-        //When the enter button is clicked, call the function to grab the id and password entered
-        //and check user authentication
-        $('#login_btn').click(function (e) {
-            e.preventDefault();
-            authenticate()
-        });
-
-        //Autheticate user function
-        function authenticate() {
-
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            if (username == null || username == "") {
+        //CHECK VALIDATION FUNCTION
+        function validate(e) {
+            if ($("input").val() == "") {
                 var forms = document.getElementsByClassName("needs-validation");
                 var validation = Array.prototype.filter.call(forms, function (form) {
                     form.classList.add("was-validated");
                 });
-                alert("Please enter the username.");
-                return false;
             }
-            if (password == null || password == "") {
-                alert("Please enter the password.");
-                return false;
-            }
-            alert('Login successful');
-
-
-            // var lusername = $("#username").val();
-            // var lpassword = $("#password").val();
-
-            // if (MyEmployeeList.length > 0) {
-            //     for (i = 0; i < MyEmployeeList.length; i++) {
-            //         if ((lusername == MyEmployeeList[i].username) && (lpassword == MyEmployeeList[i].password)) {
-            //             alert("You're in!");
-            //             $('#username').value = "";
-            //             $('#password').value = "";
-            //             break;
-            //             console.log(MyEmployeeList[i].username, '-----');
-            //         }
-            //         if (i == MyEmployeeList.length - 1 || MyEmployeeList.length == 0) {
-            //             console.log('working')
-            //             troubleshoot(username, password);
-            //         }
-            //     }
-            // } else {//enter here on first load when there are no MyEmployeeList in the array yet
-            //     alert("No match found. Please click the Create Account link to register a new username");
-            //     $('#username').value = "";
-            //     $('#password').value = "";
-            // }
-
-        };
-        //If there is a match in the known usernames clear only the password field so user
-        //doesn't have to retype un
-        //If there is no match in the known usernames clear both username and password fields
-        function troubleshoot(username, password) {
-            for (j = 0; j < MyEmployeeList.length; j++) {
-                if (username == MyEmployeeList[j].username) {
-                    alert("Bad password");
-                    $('#password').value = "";
-                    break;
-                };
-                if (j == MyEmployeeList.length - 1 || MyEmployeeList.length == 0) {
-                    alert("No match found. Please click the Create Account link to register a new username");
-                    $('#username').value = "";
-                    $('#password').value = "";
-                };
-            };
-        };
-    </script>
-    <script>
-        if (!Object.is) {
-            Object.defineProperty(Object, "is", {
-                value: function (x, y) {
-                    // SameValue algorithm
-                    if (x === y) {
-                        // return true if x and y are not 0, OR
-                        // if x and y are both 0 of the same sign.
-                        // This checks for cases 1 and 2 above.
-                        return x !== 0 || 1 / x === 1 / y;
-                    } else {
-                        // return true if both x AND y evaluate to NaN.
-                        // The only possibility for a variable to not be strictly equal to itself
-                        // is when that variable evaluates to NaN (example: Number.NaN, 0/0, NaN).
-                        // This checks for case 3.
-                        return x !== x && y !== y;
-                    }
-                }
-            });
+            return (false);
         }
+
+        //and check user authentication
+        $('#login_btn').click(function (e) {
+            e.preventDefault();
+            validate()
+            // alert('auth')
+            checkAuthentication()
+        });
+
+        //Authenticate user function
+        function checkAuthentication() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            async function getData() {
+                const response = await fetch(`http://localhost:3000/employees?key=emp123loyee789&username=${username}`);
+                const data = await response.json();
+                console.log(data)
+                var dataText = JSON.stringify(data)
+                console.log(dataText);
+                var findObj = JSON.parse(dataText)[0]
+                console.log(findObj);
+                var actPassword = findObj.password
+                console.log(actPassword);
+
+                console.log('---------', password, '\n', '---------', actPassword);
+
+                if (password === actPassword) {
+                    // var forms = document.getElementsByClassName("needs-validation");
+                    // var validation = Array.prototype.filter.call(forms, function (form) {
+                    //     form.classList.remove("was-validated");
+                    // });
+                    alert('Matched')
+                    // if (obj.flag === 0) {
+                    // window.location.assign('./index.html')
+                    // } else {
+                    //     window.location.assign('./2.html')
+                    // }
+
+                } else {
+                    alert("Please enter valid password.");
+                    var forms = document.getElementsByClassName("needs-validation");
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.classList.add("was-validated");
+                    });
+                    document.getElementById('password').value = "";
+                }
+
+            } getData()
+
+            // var obj = employeeList.find((employee) => employee.storedUsername == username);
+
+            // alert('Login successful');
+
+
+        };
+
     </script>
 
 </body>

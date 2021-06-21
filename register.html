@@ -68,13 +68,13 @@
                                             <div class="form-group ">
                                                 <label class="form-label">First Name</label>
                                                 <input type="text" class="form-control" placeholder="first name"
-                                                    id="fName" name="fName" required>
+                                                    id="fName" name="fName" maxlength="8" required>
                                                 <div class="invalid-feedback">Please enter a valid name</div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Last Name</label>
                                                 <input type="text" class="form-control" id="lName" name="lName"
-                                                    required>
+                                                    maxlength="8" required>
                                                 <div class="invalid-feedback">Please enter a valid name</div>
                                             </div>
                                         </div>
@@ -89,7 +89,7 @@
                                         <div class="form-group">
                                             <label class="form-label">Address</label>
                                             <input type="text" class="form-control" id="address" name="address"
-                                                required>
+                                                maxlength="30" required>
                                             <div class="invalid-feedback">Please enter a valid address</div>
                                         </div>
 
@@ -100,16 +100,21 @@
                                                 <div class="invalid-feedback">Only numbers are allowed</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-label">Password</label>
-                                                <input class="form-control" id="password" placeholder="password"
-                                                    type="password" required autocomplete>
-                                                <div id="error_msg" class="invalid-feedback">Please enter strong
-                                                    password</div>
+                                                <label class="form-label">Role</label>
+                                                <div class="d-inline-block">
+                                                    <input type="radio" name="role" id="employee" value="0" checked>
+                                                    <label for="employee">Employee</label>
+                                                </div>
+                                                <div class="d-inline-block">
+                                                    <input type="radio" name="role" id="admin" value="1">
+                                                    <label for="admin">Admin</label>
+                                                </div>
+
+
+                                                <div id="error_msg" class="invalid-feedback">Please select your role
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- <div id="msg">
-                                            <pre></pre>
-                                        </div> -->
 
                                         <div class="button-block">
                                             <button type="button" id="register_btn" onclick="handleSubmitData(event)"
@@ -134,9 +139,26 @@
 
     <script>
         let employees = [];
-        var flag = 0;
+        let flag = ''
+        // let flag = document.getElementsByName('role').value;
+        // console.log(flag, 'lll')
+
+        // //GET FLAG VALUE
+        // getFlagValue = function () {
+        //     if (document.getElementById('admin').checked) {
+        //         flag = 1;
+        //         console.log(flag);
+        //     } else {
+        //         flag = 0
+        //         console.log(flag);
+        //     }
+        //     // return flag
+        // }
+        // // let flag = getFlagValue();
+        // // console.log(flag)
 
         //EMPLOYEE OBJECT
+
         const addEmployee = (ev) => {
             let employee = {
                 // id,
@@ -145,8 +167,11 @@
                 email: $("#email").val(),
                 address: $("#address").val(),
                 age: $("#age").val(),
+                password: Math.random().toString(36).slice(-10),
                 username: $("#email").val().split("@")[0],
+                flag: $('input[name=role]:checked', '#registerForm').val()
             }
+            alert('flag val is ', flag)
             employees.push(employee);
             // console.log("employee added", employee);
             //saving to localStorage
@@ -173,7 +198,7 @@
                 Password is: ${password}`
             })
                 .then(function (message) {
-                    alert("Mail has been sent successfully, Go and check your Inbox")
+                    alert("Mail has been sent successfully, Please Go and check your Inbox")
                 });
         }
 
@@ -238,6 +263,7 @@
             event.preventDefault();
             //CHECK VALIDATION
             validate();
+            // getFlagValue()
             return false;
             event.preventDefault();
         }

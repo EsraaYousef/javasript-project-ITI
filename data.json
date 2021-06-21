@@ -1,44 +1,26 @@
 {
   "employees": [
     {
-      "fName": "Knox Owens",
-      "lName": "Georgia Stanton",
-      "email": "samibywyxo@mailinator.com",
-      "address": "Sit et optio in per",
-      "age": "19",
-      "password": "Pa$$w0rd!",
-      "username": "samibywyxo",
+      "fName": "Leonard Sullivan",
+      "lName": "Veda Saunders",
+      "email": "butadugo@mailinator.com",
+      "address": "Ut ducimus magnam i",
+      "age": "2",
+      "password": "ltmbqm65r5",
+      "username": "butadugo",
+      "flag": "0",
       "id": 1
     },
     {
-      "fName": "Stacy Farrell",
-      "lName": "Luke Pollard",
-      "email": "lomyxaxi@mailinator.com",
-      "address": "Consequatur aut ut i",
-      "age": "61",
-      "password": "Pa$$w0rd!",
-      "username": "lomyxaxi",
+      "fName": "Echo Oneil",
+      "lName": "Orlando Beck",
+      "email": "hihyfopy@mailinator.com",
+      "address": "Totam qui esse qui occaecat e",
+      "age": "25",
+      "password": "q9x9yrms0i",
+      "username": "hihyfopy",
+      "flag": "0",
       "id": 2
-    },
-    {
-      "fName": "Iris Deleon",
-      "lName": "May Blackwell",
-      "email": "morajazino@mailinator.com",
-      "address": "Excepteur excepturi ",
-      "age": "90",
-      "password": "Pa$$w0rd!",
-      "username": "morajazino",
-      "id": 3
-    },
-    {
-      "fName": "Merritt Anderson",
-      "lName": "Kevin Pollard",
-      "email": "biqylyne@mailinator.com",
-      "address": "Placeat odio eum re",
-      "age": "27",
-      "password": "Pa$$w0rd!",
-      "username": "biqylyne",
-      "id": 4
     }
   ]
 }

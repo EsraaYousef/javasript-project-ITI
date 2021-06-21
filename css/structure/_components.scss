@@ -38,18 +38,22 @@
     border-radius: 13px;
 }
 
-.form-label {
-    display: block;
-    margin-bottom: .375rem;
-    font-weight: 500;
-    font-size: .875rem;
-}
-
 
 .btn-primary {
     color: #fff !important;
-    background-color: #36f;
-    border-color: #36f;
+    background-color: $main-color;
+    border-color: $main-color;
+    opacity: 0.9;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: $main-color;
+        @extend %shadow;
+        @extend %ease;
+        opacity: 1;
+    }
 }
 
 .card {
@@ -63,6 +67,7 @@
 .custom-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .form-group {
         width: 50%;
