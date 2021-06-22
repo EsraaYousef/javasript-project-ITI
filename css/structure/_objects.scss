@@ -64,6 +64,36 @@ textarea {
     }
 }
 
+option:disabled {
+    color: $light-grey;
+}
+
+
+.btn-primary {
+    color: #fff !important;
+    background-color: $main-color;
+    border-color: $main-color;
+    opacity: 0.9;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: $main-color;
+        @extend %shadow;
+        @extend %ease;
+        opacity: 1;
+    }
+
+    &:disabled,
+    &.disabled {
+        background-color: $main-color;
+        border-color: $main-color;
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
 // validation
 .form-control.is-invalid,
 .was-validated .form-control:invalid,
@@ -99,10 +129,6 @@ textarea {
 
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-}
-
-.single-select {
-    min-width: 140px;
 }
 
 

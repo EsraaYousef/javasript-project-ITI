@@ -8,7 +8,7 @@ body::-webkit-scrollbar-track, .btn-primary:hover, .btn-primary:focus, .btn-prim
   -o-box-shadow: 0 6px 18px rgba(196, 205, 224, 0.3);
   box-shadow: 0 6px 18px rgba(196, 205, 224, 0.3); }
 
-a:hover, a:focus, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, a:hover, a:focus {
   -webkit-transition: all 0.3s linear 0s;
   -moz-transition: all 0.3s linear 0s;
   -o-transition: all 0.3s linear 0s;
@@ -152,6 +152,23 @@ textarea.form-control {
     box-shadow: none;
     border-color: #263871; }
 
+option:disabled {
+  color: #d1d2d5; }
+
+.btn-primary {
+  color: #fff !important;
+  background-color: #263871;
+  border-color: #263871;
+  opacity: 0.9; }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    background-color: #263871;
+    opacity: 1; }
+  .btn-primary:disabled, .btn-primary.disabled {
+    background-color: #263871;
+    border-color: #263871;
+    opacity: 0.5;
+    cursor: not-allowed; }
+
 .form-control.is-invalid,
 .was-validated .form-control:invalid,
 .form-control.is-valid,
@@ -183,9 +200,6 @@ textarea.form-control {
 
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none; }
-
-.single-select {
-  min-width: 140px; }
 
 .note {
   color: red;
@@ -267,15 +281,6 @@ input[type=number]::-webkit-inner-spin-button {
   box-shadow: 0 0.15rem 1.75rem 0 rgba(196, 205, 224, 0.2);
   border-radius: 13px; }
 
-.btn-primary {
-  color: #fff !important;
-  background-color: #263871;
-  border-color: #263871;
-  opacity: 0.9; }
-  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
-    background-color: #263871;
-    opacity: 1; }
-
 .card p.text-muted {
   margin-bottom: 0; }
 
@@ -289,6 +294,10 @@ input[type=number]::-webkit-inner-spin-button {
       padding-left: 0.5rem; }
     .custom-row .form-group:nth-child(odd) {
       padding-right: 0.5rem; }
+
+.modal .modal-body h3 {
+  text-align: center;
+  font-size: 16px; }
 
 @media (min-width: 992px) {
   .mobile-visible {

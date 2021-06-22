@@ -68,7 +68,7 @@
                                             <label class="form-label">Username</label>
                                             <input class="form-control" id="username" name="username"
                                                 placeholder="Enter your username" type="text" required>
-                                            <div class="invalid-feedback">Please enter your email</div>
+                                            <div class="invalid-feedback">Please enter your username</div>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label">Password</label>
@@ -87,7 +87,6 @@
                                             <button type="submit" id="login_btn"
                                                 class="btn btn-primary btn-block">Login</button>
                                         </div>
-                                        <div id="response"></div>
                                     </form>
                                 </div>
                             </div>
@@ -97,23 +96,14 @@
             </div>
         </div>
     </div>
-    <!-- <a href="mailto:abc@example.com?subject = Feedback&body = Message">
-        Send Feedback
-    </a> -->
+
     <!-- JavaScript Libraries -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="data.json"></script> -->
 
 
     <script>
-        var flag = 0;
-        //Define an array to hold employeeList as they're added in the new registration page
-        var employeeList = JSON.parse(localStorage.getItem('employeeList'));
-
-        //log the list of employeeList 
-        console.log(employeeList);
 
         //CHECK VALIDATION FUNCTION
         function validate(e) {
@@ -126,62 +116,53 @@
             return (false);
         }
 
-        //and check user authentication
-        $('#login_btn').click(function (e) {
-            e.preventDefault();
-            validate()
-            // alert('auth')
-            checkAuthentication()
-        });
-
         //Authenticate user function
         function checkAuthentication() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
             async function getData() {
-                const response = await fetch(`http://localhost:3000/employees?key=emp123loyee789&username=${username}`);
+                const response = await fetch(`http://localhost:3000/employees?username=${username}`);
                 const data = await response.json();
-                console.log(data)
-                var dataText = JSON.stringify(data)
-                console.log(dataText);
-                var findObj = JSON.parse(dataText)[0]
-                console.log(findObj);
-                var actPassword = findObj.password
-                console.log(actPassword);
-
-                console.log('---------', password, '\n', '---------', actPassword);
-
-                if (password === actPassword) {
-                    // var forms = document.getElementsByClassName("needs-validation");
-                    // var validation = Array.prototype.filter.call(forms, function (form) {
-                    //     form.classList.remove("was-validated");
-                    // });
-                    alert('Matched')
-                    // if (obj.flag === 0) {
-                    // window.location.assign('./index.html')
-                    // } else {
-                    //     window.location.assign('./2.html')
-                    // }
-
-                } else {
+                if (!data.length) {
+                    alert('wrong username')
+                    return
+                } else if (data[0].password != password) {
                     alert("Please enter valid password.");
                     var forms = document.getElementsByClassName("needs-validation");
                     var validation = Array.prototype.filter.call(forms, function (form) {
                         form.classList.add("was-validated");
                     });
+
                     document.getElementById('password').value = "";
+                    return
+                } else {
+                    console.log('Flag value is ==> ', data[0].flag);
+                    alert('Login SUCCESS')
+
+                    if (data[0].flag == 1) {
+                        alert('go to admin profile')
+                        window.location.href = "./profile-admin.html";
+                    } else if (data[0].flag == 0) {
+                        alert('go to employee profile')
+                        window.location.href = "./profile-employee.html";
+                    }
+                    else if (data[0].flag == 2) {
+                        alert('go to student profile')
+                        window.location.href = "./profile-student.html";
+                    }
                 }
-
             } getData()
-
-            // var obj = employeeList.find((employee) => employee.storedUsername == username);
-
-            // alert('Login successful');
-
 
         };
 
+
+        //and check user authentication
+        $('#login_btn').click(function (e) {
+            e.preventDefault();
+            validate()
+            checkAuthentication()
+        });
     </script>
 
 </body>

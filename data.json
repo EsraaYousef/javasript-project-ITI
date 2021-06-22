@@ -1,26 +1,130 @@
 {
   "employees": [
     {
-      "fName": "Leonard Sullivan",
-      "lName": "Veda Saunders",
-      "email": "butadugo@mailinator.com",
-      "address": "Ut ducimus magnam i",
-      "age": "2",
-      "password": "ltmbqm65r5",
-      "username": "butadugo",
-      "flag": "0",
+      "fName": "admin",
+      "lName": "admin",
+      "email": "admin@gmail.com",
+      "address": "Makka St",
+      "age": "25",
+      "password": "123",
+      "username": "admin",
+      "flag": "1",
       "id": 1
     },
     {
-      "fName": "Echo Oneil",
-      "lName": "Orlando Beck",
-      "email": "hihyfopy@mailinator.com",
-      "address": "Totam qui esse qui occaecat e",
-      "age": "25",
-      "password": "q9x9yrms0i",
-      "username": "hihyfopy",
+      "fName": "employee",
+      "lName": "employee",
+      "email": "employee@gmail.com",
+      "address": "Et duis est anim ut eaque opt",
+      "age": "66",
+      "password": "123",
+      "username": "employee",
       "flag": "0",
       "id": 2
+    },
+    {
+      "fName": "student",
+      "lName": "student",
+      "email": "student@gmail.com",
+      "address": "In quis totam id placeat nob",
+      "age": "24",
+      "password": "123",
+      "username": "student",
+      "flag": "2",
+      "id": 3
+    },
+    {
+      "fName": "Octavius Downs",
+      "lName": "Jelani Jennings",
+      "email": "tagujuq@mailinator.com",
+      "address": "Velit aut laudantium quia op",
+      "age": "30",
+      "password": "rf761u0mc9",
+      "username": "tagujuq",
+      "flag": "0",
+      "id": 4
+    },
+    {
+      "fName": "Ruby Vincent",
+      "lName": "Madonna Bauer",
+      "email": "nuhipo@mailinator.com",
+      "address": "Quae voluptatem Sed non aliqu",
+      "age": "29",
+      "password": "sfaaol6hsm",
+      "username": "nuhipo",
+      "flag": "1",
+      "id": 5
+    },
+    {
+      "fName": "Adara Bass",
+      "lName": "Craig Cochran",
+      "email": "cydydi@mailinator.com",
+      "address": "Sapiente velit quibusdam cill",
+      "age": "6",
+      "password": "neohvklr8w",
+      "username": "cydydi",
+      "flag": "0",
+      "id": 6
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "report": [
+        {
+          "date": "5/31/2021",
+          "time": "7:01:00 AM",
+          "attendance": 1,
+          "late": 0,
+          "excuse": 0,
+          "absence": 0
+        },
+        {
+          "date": "6/15/2021",
+          "time": "7:00:00 AM",
+          "attendance": 1,
+          "late": 0,
+          "excuse": 0,
+          "absence": 0
+        },
+        {
+          "date": "6/16/2021",
+          "time": "07:30:00 AM",
+          "attendance": 1,
+          "late": 0,
+          "excuse": 0,
+          "absence": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "report": [
+        {
+          "date": "5/31/2021",
+          "time": "8:06:00 AM",
+          "attendance": 0,
+          "late": 1,
+          "excuse": 0,
+          "absence": 0
+        },
+        {
+          "date": "6/15/2021",
+          "time": "7:30:05 AM",
+          "attendance": 1,
+          "late": 0,
+          "excuse": 0,
+          "absence": 0
+        },
+        {
+          "date": "6/16/2021",
+          "time": "7:36:14 AM",
+          "attendance": 1,
+          "late": 0,
+          "excuse": 0,
+          "absence": 0
+        }
+      ]
     }
   ]
 }

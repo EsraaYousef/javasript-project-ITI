@@ -101,17 +101,17 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label">Role</label>
-                                                <div class="d-inline-block">
+                                                <div class="d-inline-block mr-2">
+                                                    <input type="radio" name="role" id="student" value="2">
+                                                    <label for="student">Student</label>
+                                                </div>
+                                                <div class="d-inline-block mr-2">
                                                     <input type="radio" name="role" id="employee" value="0" checked>
                                                     <label for="employee">Employee</label>
                                                 </div>
                                                 <div class="d-inline-block">
                                                     <input type="radio" name="role" id="admin" value="1">
                                                     <label for="admin">Admin</label>
-                                                </div>
-
-
-                                                <div id="error_msg" class="invalid-feedback">Please select your role
                                                 </div>
                                             </div>
                                         </div>
@@ -140,24 +140,6 @@
     <script>
         let employees = [];
         let flag = ''
-        // let flag = document.getElementsByName('role').value;
-        // console.log(flag, 'lll')
-
-        // //GET FLAG VALUE
-        // getFlagValue = function () {
-        //     if (document.getElementById('admin').checked) {
-        //         flag = 1;
-        //         console.log(flag);
-        //     } else {
-        //         flag = 0
-        //         console.log(flag);
-        //     }
-        //     // return flag
-        // }
-        // // let flag = getFlagValue();
-        // // console.log(flag)
-
-        //EMPLOYEE OBJECT
 
         const addEmployee = (ev) => {
             let employee = {
@@ -171,7 +153,6 @@
                 username: $("#email").val().split("@")[0],
                 flag: $('input[name=role]:checked', '#registerForm').val()
             }
-            alert('flag val is ', flag)
             employees.push(employee);
             // console.log("employee added", employee);
             //saving to localStorage
@@ -203,7 +184,7 @@
         }
 
 
-        //POST DATA TOP APIA
+        //POST DATA TOP API
         async function postData(url = 'http://localhost:3000/employees', data = {}) {
             alert('Processing Data !!')
             addEmployee()
