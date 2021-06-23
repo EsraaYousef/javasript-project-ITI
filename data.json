@@ -76,66 +76,70 @@
       "username": "bijutud",
       "flag": "2",
       "id": 7
+    },
+    {
+      "fName": "Heather Pitts",
+      "lName": "Tyler Gentry",
+      "email": "rywoqapaha@mailinator.com",
+      "address": "Aliquam rem in ipsam voluptate",
+      "age": "51",
+      "password": "o1ehgbv2pc",
+      "username": "rywoqapaha",
+      "flag": "2",
+      "id": 8
+    },
+    {
+      "fName": "Kaden",
+      "lName": "Nevill",
+      "email": "mixicazote@mailinator.com",
+      "address": "Quo et id perferendis odit aut",
+      "age": "31",
+      "password": "z5tmwe7y6j",
+      "username": "mixicazote",
+      "flag": "1",
+      "id": 9
     }
   ],
   "reports": [
     {
-      "id": 1,
-      "report": [
-        {
-          "date": "5/31/2021",
-          "time": "7:01:00 AM",
-          "attendance": 1,
-          "late": 0,
-          "excuse": 0,
-          "absence": 0
-        },
-        {
-          "date": "6/15/2021",
-          "time": "7:00:00 AM",
-          "attendance": 1,
-          "late": 0,
-          "excuse": 0,
-          "absence": 0
-        },
-        {
-          "date": "6/16/2021",
-          "time": "07:30:00 AM",
-          "attendance": 1,
-          "late": 0,
-          "excuse": 0,
-          "absence": 0
-        }
-      ]
+      "empId": "1",
+      "date": "22/9/99",
+      "time": "4:44am",
+      "attendance": 1,
+      "late": 0,
+      "excuse": 0,
+      "absence": 0,
+      "id": 1
     },
     {
-      "id": 2,
-      "report": [
-        {
-          "date": "5/31/2021",
-          "time": "8:06:00 AM",
-          "attendance": 0,
-          "late": 1,
-          "excuse": 0,
-          "absence": 0
-        },
-        {
-          "date": "6/15/2021",
-          "time": "7:30:05 AM",
-          "attendance": 1,
-          "late": 0,
-          "excuse": 0,
-          "absence": 0
-        },
-        {
-          "date": "6/16/2021",
-          "time": "7:36:14 AM",
-          "attendance": 1,
-          "late": 0,
-          "excuse": 0,
-          "absence": 0
-        }
-      ]
+      "empId": "2",
+      "date": "22/9/99",
+      "time": "4:44am",
+      "attendance": 1,
+      "late": 0,
+      "excuse": 0,
+      "absence": 0,
+      "id": 2
+    },
+    {
+      "empId": "2",
+      "date": "22/9/99",
+      "time": "4:44am",
+      "attendance": 1,
+      "late": 0,
+      "excuse": 0,
+      "absence": 0,
+      "id": 3
+    },
+    {
+      "empId": "2",
+      "date": "22/9/99",
+      "time": "4:44am",
+      "attendance": 1,
+      "late": 0,
+      "excuse": 0,
+      "absence": 0,
+      "id": 4
     }
   ]
 }

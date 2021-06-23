@@ -40,90 +40,78 @@
 <body>
 
     <!-- loading window -->
-    <!-- <div class="load">
-        <div class="circle">
-            <div class="circle__spin">
-                <svg>
-                    <circle cx="50%" cy="50%" r="67px"></circle>
-                </svg>
-            </div>
+    <div id="global-loader" class="global-loader loader-wrapper">
+        <div class="loader bg-white">
+            <div class="whirly-loader"> </div>
         </div>
-    </div> -->
+    </div>
 
     <div class="page login-bg">
         <div class="page-single">
             <div class="container">
-                <div class="row">
-                    <div class="col mx-auto">
-                        <div class="row justify-content-center">
-                            <div class="col-sm-10 col-md-8 col-lg-6">
-                                <div class="card">
-                                    <div class="p-4 pt-6 text-center">
-                                        <h1 class="mb-2">Register</h1>
-                                        <p class="text-muted">Create New account Now</p>
-                                    </div>
-                                    <form class="card-body pt-0 needs-validation" id="registerForm" name="registerForm"
-                                        novalidate>
-                                        <div class=" custom-row d-flex">
-                                            <div class="form-group ">
-                                                <label class="form-label">First Name</label>
-                                                <input type="text" class="form-control" placeholder="first name"
-                                                    id="fName" name="fName" maxlength="8" required>
-                                                <div class="invalid-feedback">Please enter a valid name</div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Last Name</label>
-                                                <input type="text" class="form-control" id="lName" name="lName"
-                                                    maxlength="8" required>
-                                                <div class="invalid-feedback">Please enter a valid name</div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email" name="email" required>
-                                            <input type="text" class="form-control" id="username" name="username"
-                                                hidden="hidden">
-                                            <div class="invalid-feedback">Please enter a valid email</div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label">Address</label>
-                                            <input type="text" class="form-control" id="address" name="address"
-                                                maxlength="30" required>
-                                            <div class="invalid-feedback">Please enter a valid address</div>
-                                        </div>
-
-                                        <div class="custom-row d-flex">
-                                            <div class="form-group">
-                                                <label class="form-label">Age</label>
-                                                <input type="number" class="form-control" id="age" name="age" required>
-                                                <div class="invalid-feedback">Only numbers are allowed</div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Role</label>
-                                                <div class="d-inline-block mr-2">
-                                                    <input type="radio" name="role" id="student" value="2">
-                                                    <label for="student">Student</label>
-                                                </div>
-                                                <div class="d-inline-block mr-2">
-                                                    <input type="radio" name="role" id="employee" value="0" checked>
-                                                    <label for="employee">Employee</label>
-                                                </div>
-                                                <div class="d-inline-block">
-                                                    <input type="radio" name="role" id="admin" value="1">
-                                                    <label for="admin">Admin</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="button-block">
-                                            <button type="button" id="register_btn" onclick="handleSubmitData(event)"
-                                                class="btn btn-primary btn-block">register</button>
-                                        </div>
-                                    </form>
+                <div class="box-lg-600">
+                    <div class="card">
+                        <div class="p-4 pt-6 text-center">
+                            <h1 class="mb-2">Register</h1>
+                            <p class="text-muted">Create New account Now</p>
+                        </div>
+                        <form class="card-body pt-0 needs-validation" id="registerForm" name="registerForm" novalidate>
+                            <div class=" custom-row d-flex">
+                                <div class="form-group ">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" placeholder="first name" id="fName"
+                                        name="fName" maxlength="8" required>
+                                    <div class="invalid-feedback">Please enter a valid name</div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lName" name="lName" maxlength="8"
+                                        required>
+                                    <div class="invalid-feedback">Please enter a valid name</div>
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <input type="text" class="form-control" id="username" name="username" hidden="hidden">
+                                <div class="invalid-feedback">Please enter a valid email</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" name="address" maxlength="30"
+                                    required>
+                                <div class="invalid-feedback">Please enter a valid address</div>
+                            </div>
+
+                            <div class="custom-row d-flex">
+                                <div class="form-group">
+                                    <label class="form-label">Age</label>
+                                    <input type="number" class="form-control" id="age" name="age" required>
+                                    <div class="invalid-feedback">Only numbers are allowed</div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Role</label>
+                                    <div class="d-inline-block mr-2">
+                                        <input type="radio" name="role" id="student" value="2">
+                                        <label for="student">Student</label>
+                                    </div>
+                                    <div class="d-inline-block mr-2">
+                                        <input type="radio" name="role" id="employee" value="0" checked>
+                                        <label for="employee">Employee</label>
+                                    </div>
+                                    <div class="d-inline-block">
+                                        <input type="radio" name="role" id="admin" value="1">
+                                        <label for="admin">Admin</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="button-block">
+                                <button type="button" id="register_btn" onclick="handleSubmitData(event)"
+                                    class="btn btn-primary btn-block">register</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -135,120 +123,8 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/smtp.js"></script>
+    <script src="js/register.js"></script>
 
-
-    <script>
-        let employees = [];
-        let flag = ''
-
-        const addEmployee = (ev) => {
-            let employee = {
-                // id,
-                fName: $("#fName").val(),
-                lName: $("#lName").val(),
-                email: $("#email").val(),
-                address: $("#address").val(),
-                age: $("#age").val(),
-                password: Math.random().toString(36).slice(-10),
-                username: $("#email").val().split("@")[0],
-                flag: $('input[name=role]:checked', '#registerForm').val()
-            }
-            employees.push(employee);
-            // console.log("employee added", employee);
-            //saving to localStorage
-            localStorage.setItem("employeeList", JSON.stringify(employees));
-        };
-
-        //SEND EMAIL
-        function sendEmail() {
-            email = $("#email").val();
-            address = $("#address").val();
-            password = $("#password").val();
-            username = $("#email").val().split("@")[0];
-
-            console.log("email ==> ", email, '\n', "username ==> ", username,);
-            Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "attendanceiti2021@gmail.com",
-                Password: "74010685975D5B4B3E9C808AFC731409026F",
-                To: email,
-                From: "attendanceiti2021@gmail.com",
-                Subject: "verification Email",
-                Body: `Congratulations, This is a verification Email from ITI Attendance System and your \n
-                Username is: ${username}\n
-                Password is: ${password}`
-            })
-                .then(function (message) {
-                    alert("Mail has been sent successfully, Please Go and check your Inbox")
-                });
-        }
-
-
-        //POST DATA TOP API
-        async function postData(url = 'http://localhost:3000/employees', data = {}) {
-            alert('Processing Data !!')
-            addEmployee()
-            var employeeList = JSON.parse(localStorage.getItem('employeeList'))[0];
-            // console.log(employeeList);
-            // Default options are marked with 
-            const response = await fetch(url, {
-                method: 'POST',
-                mode: 'cors',
-                credentials: 'same-origin',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                redirect: 'follow',
-                referrerPolicy: 'no-referrer',
-                body: JSON.stringify(employeeList)
-            })
-                .then((response) => response.json())
-                .then((employeesData) => {
-                    console.log("Success:", employeeList);
-                })
-                .catch((error) => {
-                    console.error("Error:", error);
-                });
-            document.querySelector("form").reset();
-            window.location.assign("./login.html");
-
-            return
-        }
-
-        //CHECK VALIDATION FUNCTION
-        function validate(e) {
-            if ($("input").val() == "") {
-                var forms = document.getElementsByClassName("needs-validation");
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.classList.add("was-validated");
-                });
-            }
-            else {
-                //POST DATA TO API
-                var forms = document.getElementsByClassName("needs-validation");
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.classList.remove("was-validated");
-                });
-
-                var email = $('#email').val();
-                // alert(email);
-                sendEmail()
-                //POST DATA TO API
-                postData()
-            }
-            // return (false);
-        }
-
-        //HANDLE SUBMIT DATA
-        function handleSubmitData(event) {
-            event.preventDefault();
-            //CHECK VALIDATION
-            validate();
-            // getFlagValue()
-            return false;
-            event.preventDefault();
-        }
-    </script>
 </body>
 
 </html>
