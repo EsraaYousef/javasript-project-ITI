@@ -51,10 +51,10 @@
             <div class="container">
                 <div class="box-lg-600">
                     <div class="card">
-                        <div class="p-4 pt-6 text-center">
-                            <h3 class="mb-2">Attendance Confirmation </h3>
+                        <div class="card-header">
+                            <h3 class="card-title">Attendance Confirmation </h3>
                         </div>
-                        <form class="card-body pt-0" id="confirmAttendanceForm" name="confirmAttendanceForm">
+                        <form class="card-body pt-0 border-0" id="confirmAttendanceForm" name="confirmAttendanceForm">
                             <div class="form-group">
                                 <label class="form-label" for="selectStudent">Select Student</label>
                                 <select class="form-control" id="selectStudent">
@@ -62,18 +62,17 @@
                                         Select Student</option>
                                 </select>
                             </div>
-
                             <div class="button-block">
                                 <button type="button" id="confirmAttendance_btn" class="btn btn-primary btn-block"
-                                    onclick="setTime()" data-toggle="modal" data-target="#confirmModal">confirm
+                                    data-toggle="modal" data-target="#confirmModal">confirm
                                     Attendance</button>
                             </div>
-
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- confirmation Modal -->
@@ -88,8 +87,14 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h3><span class="main-color">Username: </span><span class="font-color" id="username"></span></h3>
-                    <h3><span class="main-color">Time: </span><span class="font-color" id="time_recorder"></span></h3>
+                    <h3><span class="main-color">Username: </span><span class="font-color" id="username"></span>
+                    </h3>
+                    <h3>
+                        <span class="main-color">Time: </span>
+                        <span class="font-color" id="current_date"></span>
+                        <span class="main-color">at : </span>
+                        <span class="font-color" id="current_time"></span>
+                    </h3>
                 </div>
             </div>
         </div>

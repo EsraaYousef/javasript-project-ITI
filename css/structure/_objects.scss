@@ -87,9 +87,9 @@ option:disabled {
 
     &:disabled,
     &.disabled {
-        background-color: $main-color;
-        border-color: $main-color;
-        opacity: 0.5;
+        background-color: #255bfb;
+        border-color: #255bfb;
+        opacity: .65;
         cursor: not-allowed;
     }
 }
@@ -195,4 +195,9 @@ a {
 
 .card-body {
     padding: 1.5rem;
+}
+
+.h3,
+h3 {
+    font-size: 20px;
 }

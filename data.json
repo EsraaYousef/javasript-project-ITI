@@ -98,48 +98,100 @@
       "username": "mixicazote",
       "flag": "1",
       "id": 9
+    },
+    {
+      "fName": "Ifeoma Donaldson",
+      "lName": "Benjamin Wong",
+      "email": "quvo@mailinator.com",
+      "address": "Dolores eos velit ea atque ve",
+      "age": "7",
+      "password": "7w7d7udvnl",
+      "username": "quvo",
+      "flag": "2",
+      "id": 10
+    },
+    {
+      "fName": "Willa Dalton",
+      "lName": "Liberty Conley",
+      "email": "diryqoqud@mailinator.com",
+      "address": "Ut quia dicta id placeat qui",
+      "age": "74",
+      "password": "jl1hgt1i73",
+      "username": "diryqoqud",
+      "flag": "1",
+      "id": 11
     }
   ],
   "reports": [
     {
       "empId": "1",
-      "date": "22/9/99",
-      "time": "4:44am",
-      "attendance": 1,
+      "date": "2021-6-24",
+      "time": "23:2:12",
+      "attendance": 0,
       "late": 0,
-      "excuse": 0,
-      "absence": 0,
+      "excuse": 1,
+      "absence": 1,
       "id": 1
     },
     {
-      "empId": "2",
-      "date": "22/9/99",
-      "time": "4:44am",
-      "attendance": 1,
+      "empId": "6",
+      "date": "2021-6-24",
+      "time": "23:3:19",
+      "attendance": 0,
       "late": 0,
-      "excuse": 0,
-      "absence": 0,
+      "excuse": 1,
+      "absence": 1,
       "id": 2
     },
     {
       "empId": "2",
-      "date": "22/9/99",
-      "time": "4:44am",
-      "attendance": 1,
+      "date": "2021-6-24",
+      "time": "23:3:35",
+      "attendance": 0,
       "late": 0,
-      "excuse": 0,
-      "absence": 0,
+      "excuse": 1,
+      "absence": 1,
       "id": 3
     },
     {
-      "empId": "2",
-      "date": "22/9/99",
-      "time": "4:44am",
-      "attendance": 1,
+      "empId": "8",
+      "date": "2021-6-24",
+      "time": "23:4:11",
+      "attendance": 0,
       "late": 0,
-      "excuse": 0,
-      "absence": 0,
+      "excuse": 1,
+      "absence": 1,
       "id": 4
+    },
+    {
+      "empId": "1",
+      "date": "2021-6-24",
+      "time": "23:4:27",
+      "attendance": 0,
+      "late": 0,
+      "excuse": 1,
+      "absence": 1,
+      "id": 5
+    },
+    {
+      "empId": "6",
+      "date": "2021-6-25",
+      "time": "0:36:18",
+      "attendance": 0,
+      "late": 0,
+      "excuse": 1,
+      "absence": 1,
+      "id": 6
+    },
+    {
+      "empId": 7,
+      "date": "2021-6-25",
+      "time": "1:43:3",
+      "attendance": 0,
+      "late": 0,
+      "excuse": 1,
+      "absence": 1,
+      "id": 7
     }
   ]
 }

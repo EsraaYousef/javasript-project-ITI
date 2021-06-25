@@ -36,6 +36,32 @@
     border: 0;
     box-shadow: 0 0.15rem 1.75rem 0 rgba(196, 205, 224, 0.20);
     border-radius: 13px;
+
+    .card-header {
+        background: white;
+        text-align: start !important;
+        border: none;
+        padding: 20px;
+
+        .card-title {
+            margin-bottom: 0 !important;
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                padding: 2px;
+                height: 25px;
+                background: $main-color;
+            }
+        }
+    }
+
+    .card-body {}
+
+    .border-top {
+        border-top: 1px solid #e9ebfa;
+    }
 }
 
 
@@ -68,6 +94,71 @@
             padding-right: 0.5rem;
         }
     }
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+
+    .nav-item {
+        margin-right: 10px;
+    }
+
+    .nav-link {
+        border: 1px solid $main-color;
+        background-color: $white-color;
+        color: $main-color;
+        min-width: 150px;
+        text-align: center;
+        border-radius: 4px;
+        @extend %ease;
+
+        &.active,
+        &:active,
+        &:hover,
+        &:focus {
+            background-color: $main-color;
+            color: $white-color;
+        }
+    }
+
+}
+
+.table-responsive {
+    max-height: 500px;
+    padding-right: 10px;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        @extend %shadow;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $main-color;
+        outline: 1px solid $main-color;
+        border-radius: 2px;
+    }
+}
+
+.table {
+    th {
+        color: $main-color;
+        white-space: nowrap;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: $light-grey;
 }
 
 .modal {
