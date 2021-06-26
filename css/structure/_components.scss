@@ -161,6 +161,29 @@
     background-color: $light-grey;
 }
 
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.badge-success {
+    color: #fff;
+    background-color: #0dcd94;
+}
+
+.badge-warning {
+    color: #fff;
+    background-color: #fbc518;
+}
+
+.badge-danger {
+    color: #fff;
+    background-color: #f7284a;
+}
+
 .modal {
     .modal-body {
         h3 {

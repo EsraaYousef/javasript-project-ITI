@@ -34,8 +34,8 @@
       "id": 3
     },
     {
-      "fName": "Octavius Downs",
-      "lName": "Jelani Jennings",
+      "fName": "Octavius ",
+      "lName": "Jelani",
       "email": "tagujuq@mailinator.com",
       "address": "Velit aut laudantium quia op",
       "age": "30",
@@ -45,8 +45,8 @@
       "id": 4
     },
     {
-      "fName": "Ruby Vincent",
-      "lName": "Madonna Bauer",
+      "fName": "Ruby ",
+      "lName": "Madonna ",
       "email": "nuhipo@mailinator.com",
       "address": "Quae voluptatem Sed non aliqu",
       "age": "29",
@@ -56,8 +56,8 @@
       "id": 5
     },
     {
-      "fName": "Adara Bass",
-      "lName": "Craig Cochran",
+      "fName": "Adara ",
+      "lName": "Craig ",
       "email": "cydydi@mailinator.com",
       "address": "Sapiente velit quibusdam cill",
       "age": "6",
@@ -67,8 +67,8 @@
       "id": 6
     },
     {
-      "fName": "Vielka Cantrell",
-      "lName": "Emerson Hester",
+      "fName": "Vielka ",
+      "lName": "Emerson ",
       "email": "bijutud@mailinator.com",
       "address": "Est aliquam quia sed veniam ",
       "age": "73",
@@ -78,8 +78,8 @@
       "id": 7
     },
     {
-      "fName": "Heather Pitts",
-      "lName": "Tyler Gentry",
+      "fName": "Heather ",
+      "lName": "Tyler ",
       "email": "rywoqapaha@mailinator.com",
       "address": "Aliquam rem in ipsam voluptate",
       "age": "51",
@@ -100,7 +100,7 @@
       "id": 9
     },
     {
-      "fName": "Ifeoma Donaldson",
+      "fName": "Ifeoma ",
       "lName": "Benjamin Wong",
       "email": "quvo@mailinator.com",
       "address": "Dolores eos velit ea atque ve",
@@ -111,8 +111,8 @@
       "id": 10
     },
     {
-      "fName": "Willa Dalton",
-      "lName": "Liberty Conley",
+      "fName": "Willa ",
+      "lName": "Liberty ",
       "email": "diryqoqud@mailinator.com",
       "address": "Ut quia dicta id placeat qui",
       "age": "74",
@@ -124,74 +124,180 @@
   ],
   "reports": [
     {
-      "empId": "1",
-      "date": "2021-6-24",
-      "time": "23:2:12",
-      "attendance": 0,
+      "empId": 1,
+      "date": "2021-6-25",
+      "time": "8:43:3",
+      "attendance": 1,
       "late": 0,
-      "excuse": 1,
-      "absence": 1,
+      "excuse": 0,
+      "absence": 0,
+      "currentTextStatus": "Attend",
       "id": 1
     },
     {
-      "empId": "6",
-      "date": "2021-6-24",
-      "time": "23:3:19",
+      "empId": 1,
+      "date": "2020-1-6",
+      "time": "11:47:36",
       "attendance": 0,
       "late": 0,
       "excuse": 1,
       "absence": 1,
+      "currentTextStatus": "Absent",
       "id": 2
     },
     {
-      "empId": "2",
-      "date": "2021-6-24",
-      "time": "23:3:35",
+      "empId": 2,
+      "date": "2019-4-4",
+      "time": "10:47:42",
       "attendance": 0,
       "late": 0,
       "excuse": 1,
       "absence": 1,
+      "currentTextStatus": "Absent",
       "id": 3
     },
     {
-      "empId": "8",
-      "date": "2021-6-24",
-      "time": "23:4:11",
-      "attendance": 0,
+      "empId": 2,
+      "date": "2021-6-25",
+      "time": "9:0:0",
+      "attendance": 1,
       "late": 0,
-      "excuse": 1,
-      "absence": 1,
+      "excuse": 0,
+      "absence": 0,
+      "currentTextStatus": "Attend",
       "id": 4
     },
     {
-      "empId": "1",
-      "date": "2021-6-24",
-      "time": "23:4:27",
-      "attendance": 0,
+      "empId": 3,
+      "date": "2021-6-25",
+      "time": "8:33:0",
+      "attendance": 1,
       "late": 0,
-      "excuse": 1,
-      "absence": 1,
+      "excuse": 0,
+      "absence": 0,
+      "currentTextStatus": "Attend",
       "id": 5
     },
     {
-      "empId": "6",
+      "empId": 5,
       "date": "2021-6-25",
-      "time": "0:36:18",
-      "attendance": 0,
+      "time": "9:0:0",
+      "attendance": 1,
       "late": 0,
-      "excuse": 1,
-      "absence": 1,
+      "excuse": 0,
+      "absence": 0,
+      "currentTextStatus": "Attend",
       "id": 6
     },
     {
       "empId": 7,
       "date": "2021-6-25",
-      "time": "1:43:3",
+      "time": "8:44:0",
+      "attendance": 1,
+      "late": 0,
+      "excuse": 0,
+      "absence": 0,
+      "currentTextStatus": "Attend",
+      "id": 7
+    },
+    {
+      "empId": 8,
+      "date": "2021-6-25",
+      "time": "8:59:0",
+      "attendance": 1,
+      "late": 0,
+      "excuse": 0,
+      "absence": 0,
+      "currentTextStatus": "Attend",
+      "id": 8
+    },
+    {
+      "empId": 11,
+      "date": "2021-6-25",
+      "time": "8:38:0",
+      "attendance": 1,
+      "late": 0,
+      "excuse": 0,
+      "absence": 0,
+      "currentTextStatus": "Attend",
+      "id": 9
+    },
+    {
+      "empId": 10,
+      "date": "2021-6-25",
+      "time": "9:31:0",
+      "attendance": 1,
+      "late": 1,
+      "excuse": 1,
+      "absence": 0,
+      "currentTextStatus": "Late",
+      "id": 10
+    },
+    {
+      "empId": 9,
+      "date": "2021-6-25",
+      "time": "11:0:0",
+      "attendance": 0,
+      "late": 1,
+      "excuse": 1,
+      "absence": 1,
+      "currentTextStatus": "Absent",
+      "id": 11
+    },
+    {
+      "empId": 8,
+      "date": "2020-6-15",
+      "time": "1:12:48",
       "attendance": 0,
       "late": 0,
       "excuse": 1,
       "absence": 1,
-      "id": 7
+      "currentTextStatus": "Absent",
+      "id": 12
+    },
+    {
+      "empId": 7,
+      "date": "2021-6-24",
+      "time": "1:12:52",
+      "attendance": 0,
+      "late": 0,
+      "excuse": 1,
+      "absence": 1,
+      "currentTextStatus": "Absent",
+      "id": 13
+    },
+    {
+      "empId": 6,
+      "date": "2021-6-25",
+      "time": "10:0:0",
+      "attendance": 0,
+      "late": 1,
+      "excuse": 1,
+      "absence": 1,
+      "currentTextStatus": "Absent",
+      "id": 14
+    },
+    {
+      "empId": 4,
+      "date": "2021-6-25",
+      "time": "8:58:0",
+      "attendance": 1,
+      "late": 0,
+      "excuse": 0,
+      "absence": 0,
+      "currentTextStatus": "Attend",
+      "id": 15
+    },
+    {
+      "empId": 3,
+      "date": "2021-6-24",
+      "time": "1:13:5",
+      "attendance": 0,
+      "late": 0,
+      "excuse": 1,
+      "absence": 1,
+      "currentTextStatus": "Absent",
+      "id": 16
     }
   ]
 }

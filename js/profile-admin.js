@@ -2,15 +2,6 @@ $(window).on("load", function () {
   $(".global-loader").delay(500).fadeOut("slow");
 });
 
-// getEmployeesData();
-//getDailyReports()
-function getDailyReports() {
-  getEmployeesData();
-}
-//getDailyReports()
-function getMonthlyReports() {
-  alert("getMonthlyReports");
-}
 //arrange
 function groupArrayOfObjectsByValue(list, key) {
   let arrOfObjects = list.reduce(function (prev, cur) {
@@ -24,23 +15,17 @@ function groupArrayOfObjectsByValue(list, key) {
   });
 }
 async function getEmployeesData() {
-  const fetchEmps = await fetch("http://localhost:3000/employees");
-  const empsJson = await fetchEmps.json();
+  const fetchEmployees = await fetch("http://localhost:3000/employees");
+  const employeesJson = await fetchEmployees.json();
 
-  // var tr = $("tr");
-  // for (var newId = tr.index() + 1; newId > tr.length; newId++) {
-
-  // }
   const fetchReports = await fetch(`http://localhost:3000/reports`);
   const reportsJson = await fetchReports.json();
 
-  console.log("reports json => ", reportsJson);
-
-  console.log("Before grouping ==> ", reportsJson);
+  console.log("Reports Before grouping ==> ", reportsJson);
 
   let reportsGroupedArr = groupArrayOfObjectsByValue(reportsJson, "empId");
 
-  console.log("After grouping ==> ", reportsGroupedArr);
+  console.log("Reports grouped for each Employee ==> ", reportsGroupedArr);
 
   var copyOfReport = [];
   for (let i = 0; i < reportsJson.length; i++) {
@@ -57,12 +42,29 @@ async function getEmployeesData() {
 
   // Grouping the cloned array by month number
   let reportGroupedByDay = groupArrayOfObjectsByValue(copyOfReport, "date");
-
   console.log("reportGroupedByDay", reportGroupedByDay);
+
+  //reports ordered by date
+  var recentDay = reportGroupedByDay[reportGroupedByDay.length - 1];
+  console.log("reports ordered by date", recentDay, recentDay.length);
+  //SORT BY ID
+  recentDay.sort((a, b) => (a.empId > b.empId ? 1 : -1));
+  console.log("reports ordered by ", recentDay);
+  //GET DATE
+  let recentTimeVal = recentDay.map(({ time }) => time);
+  let currentTextStatusVal = recentDay.map(
+    ({ currentTextStatus }) => currentTextStatus
+  );
+  console.log(currentTextStatusVal);
+
+  //DRAW TABLE
   const body = document.querySelector("tbody");
 
-  empsJson.forEach((employee) => {
-    const { id, fName, lName, email, username } = employee;
+  console.log("employeesJson.length", employeesJson.length);
+  console.log("reportGroupedByDay.length", reportGroupedByDay.length);
+
+  for (let i = 0; i < employeesJson.length; i++) {
+    const { id, fName, lName, email, username } = employeesJson[i];
     const body = document.querySelector("tbody");
     const htmlTemplate = `
             <tr id="employee-${id}">
@@ -70,9 +72,39 @@ async function getEmployeesData() {
               <td>${fName + " " + lName}</td>
               <td>${username}</td>
               <td>${email}</td>
-              <td>checkIn </td>
+              <td>${recentTimeVal[i]} </td>
+              <td class="status"><span class="badge">${
+                currentTextStatusVal[i]
+              }</span></td>
             </tr>
             `;
     body.innerHTML += htmlTemplate;
-  });
+  }
+  //SET status CLASS
+  function checkStatus() {
+    $("table tr")
+      .find("td.status span")
+      .each(function () {
+        var elem = $(this);
+        if ($(this).text().includes("Attend")) {
+          elem.addClass("badge-success");
+        } else if ($(this).text().includes("Late")) {
+          elem.addClass("badge-warning");
+        } else {
+          elem.addClass("badge-danger");
+        }
+      });
+  }
+  checkStatus();
+}
+getEmployeesData();
+
+// getEmployeesData();
+//getDailyReports()
+function getDailyReports() {
+  getEmployeesData();
+}
+//getDailyReports()
+function getMonthlyReports() {
+  getEmployeesData();
 }

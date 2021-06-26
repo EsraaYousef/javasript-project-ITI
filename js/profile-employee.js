@@ -20,6 +20,7 @@ function getTimeStamp() {
 
   //CHECK STATUS
   var status;
+  var textStatus = "";
   if (hour == 8 || hour == 9) {
     status = {
       attendance: 1,
@@ -27,6 +28,7 @@ function getTimeStamp() {
       excuse: 0,
       absence: 0,
     };
+    textStatus = "Attend";
     alert("Perfect you are on time");
   }
   if ((hour == 9 && minutes < 1) || hour == 10) {
@@ -36,6 +38,7 @@ function getTimeStamp() {
       excuse: 1,
       absence: 0,
     };
+    textStatus = "Late";
     alert("You are late");
   } else {
     status = {
@@ -44,9 +47,12 @@ function getTimeStamp() {
       excuse: 1,
       absence: 1,
     };
+    textStatus = "Absent";
     alert("Employee is Absence");
   }
+  console.log(textStatus);
   localStorage.setItem("status", JSON.stringify(status));
+  localStorage.setItem("textStatus", JSON.stringify(textStatus));
 }
 
 //GET ALL MAIN DATA FROM EMPLOYEES[]
@@ -92,12 +98,14 @@ const addReport = () => {
   var id = $("#selectStudent").children(":selected").attr("id");
   getTimeStamp();
   var currentStatus = JSON.parse(localStorage.getItem("status"));
+  var currentTextStatus = JSON.parse(localStorage.getItem("textStatus"));
 
   let report = {
     empId: parseInt(id),
     date: $("#current_date").text(),
     time: $("#current_time").text(),
     ...currentStatus,
+    currentTextStatus,
   };
 
   localStorage.setItem("reportData", JSON.stringify(report));

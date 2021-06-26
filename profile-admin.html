@@ -67,11 +67,11 @@
                                         onclick="getMonthlyReports()">Monthly Reports</a>
                                 </li>
                             </ul>
-                            <div class="tab-content" id="myTabContent">
+                            <div class="tab-content" id="TabContent">
                                 <div class="tab-pane fade show active" id="daily" role="tabpanel"
                                     aria-labelledby="daily-tab">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered table-striped">
+                                        <table class="table table-bordered table-striped" id="dailyReports">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">ID</th>
@@ -79,6 +79,25 @@
                                                     <th scope="col">Username</th>
                                                     <th scope="col">email</th>
                                                     <th scope="col">Check In</th>
+                                                    <th scope="col">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="monthly" role="tabpanel" aria-labelledby="monthly-tab">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped" id="monthlyReports">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Full Name</th>
+                                                    <th scope="col">Username</th>
+                                                    <th scope="col">email</th>
+                                                    <th scope="col">Check In</th>
+                                                    <th scope="col">Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -87,10 +106,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="monthly" role="tabpanel" aria-labelledby="monthly-tab">
-                                    ...</div>
                             </div>
-
                         </div>
                     </div>
                 </div>
