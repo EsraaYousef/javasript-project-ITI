@@ -31,13 +31,14 @@ async function getEmployeesData() {
   for (let i = 0; i < reportsJson.length; i++) {
     // Copying report into a new array
     copyOfReport.push(reportsJson[i]);
-
     // Getting month number from date in report
     var parseDate = Date.parse(reportsJson[i].date);
     var dayNum = new Date(parseDate).getDate();
 
     // Overwriting date from full string to only month number
     copyOfReport[i] = { ...copyOfReport[i], date: dayNum };
+    // copyOfReportatt = { ...copyOfReport[i], attendance: 1 };
+    // console.log("copyOfReportatt", copyOfReportatt);
   }
 
   // Grouping the cloned array by month number
@@ -55,30 +56,29 @@ async function getEmployeesData() {
   let currentTextStatusVal = recentDay.map(
     ({ currentTextStatus }) => currentTextStatus
   );
-  console.log(currentTextStatusVal);
+  //NUM OF ATTENDANCE
 
-  //DRAW TABLE
-  const body = document.querySelector("tbody");
+  // console.log(currentTextStatusVal);
 
-  console.log("employeesJson.length", employeesJson.length);
-  console.log("reportGroupedByDay.length", reportGroupedByDay.length);
+  // console.log("employeesJson.length", employeesJson.length);
+  // console.log("reportGroupedByDay.length", reportGroupedByDay.length);
 
+  //DRAW DAILY REPORT TABLE
   for (let i = 0; i < employeesJson.length; i++) {
     const { id, fName, lName, email, username } = employeesJson[i];
-    const body = document.querySelector("tbody");
-    const htmlTemplate = `
-            <tr id="employee-${id}">
-              <td>${id}</td>
-              <td>${fName + " " + lName}</td>
-              <td>${username}</td>
-              <td>${email}</td>
-              <td>${recentTimeVal[i]} </td>
-              <td class="status"><span class="badge">${
-                currentTextStatusVal[i]
-              }</span></td>
-            </tr>
-            `;
-    body.innerHTML += htmlTemplate;
+    const body = document.querySelector("#dailyReports tbody");
+    $(body).append(
+      `<tr id="employee-${id}">
+      <td>${id}</td>
+      <td>${fName + " " + lName}</td>
+      <td>${username}</>
+      <td>${email}</td>
+      <td>${recentTimeVal[i]}</td>
+      <td class="status"><span class="badge">${
+        currentTextStatusVal[i]
+      }</span></td></tr>
+    `
+    );
   }
   //SET status CLASS
   function checkStatus() {
@@ -96,6 +96,23 @@ async function getEmployeesData() {
       });
   }
   checkStatus();
+  //DRAW MONTHLY REPORT TABLE
+  for (let i = 0; i < employeesJson.length; i++) {
+    const { id, fName, lName, email, username } = employeesJson[i];
+    const body = document.querySelector("#monthlyReports tbody");
+    $(body).append(
+      `<tr id="employee-${id}">
+      <td>${id}</td>
+      <td>${fName + " " + lName}</td>
+      <td>${username}</>
+      <td>${email}</td>
+      <td>${recentTimeVal[i]}</td>
+      <td class="status"><span class="badge">${
+        currentTextStatusVal[i]
+      }</span></td></tr>
+    `
+    );
+  }
 }
 getEmployeesData();
 
@@ -104,7 +121,7 @@ getEmployeesData();
 function getDailyReports() {
   getEmployeesData();
 }
-//getDailyReports()
 function getMonthlyReports() {
   getEmployeesData();
 }
+//getDailyReports()
